@@ -1,0 +1,94 @@
+.container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 250px;
+  background-color: rgba(255, 255, 255, 0.91);
+  padding: 50px;
+  border-radius: 50px;
+}
+
+.no-link {
+  text-decoration: none;
+}
+
+h1 {
+  color: #438ca7;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+h2:before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background: url("../../assets/user.png");
+}
+
+.fields {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.buttons {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  background-color: #438ca7;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin: 10px 0;
+
+  transition: 0.5s;
+}
+
+.buttons:hover {
+  background-color: #6fc6e5;
+  cursor: pointer;
+}
+
+.links-container {
+  display: flex;
+}
+
+p {
+  font-weight: bold;
+  margin: 10px 5px 0 0;
+}
+
+.links {
+  color: #438ca7;
+
+  transition: 0.5s;
+}
+
+.links:hover {
+  cursor: pointer;
+  color: #6fc6e5;
+}
+
+.disclaimer {
+  color: #a6a6a6;
+  font-size: 12px;
+  margin: -5px 0 10px 0;
+}
+
+.err-msg {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.17);
+  border-radius: 10px;
+  width: 99%;
+  padding: 10px;
+  display: none;
+}

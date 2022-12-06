@@ -1,0 +1,91 @@
+@font-face {
+  font-family: hyperspace;
+  src: url(../../assets/hyperspace-race-condensed-heavy.otf);
+}
+
+nav {
+  background-color: #438ca7d3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.no-link {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-family: hyperspace;
+  font-size: 40px;
+
+  transition: 0.5s;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.posts {
+  display: flex;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.posts:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../../assets/posts.png");
+}
+
+.login {
+  display: flex;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.login:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../../assets/login.png");
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.signup:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../../assets/signup.png");
+}
+
+.posts:hover,
+.login:hover,
+.signup:hover {
+  cursor: pointer;
+  font-size: 20px;
+  text-shadow: 4px 3px 6px white;
+}
+
+.logo:hover {
+  cursor: pointer;
+  text-shadow: 4px 3px 6px white;
+}

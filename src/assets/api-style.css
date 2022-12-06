@@ -1,0 +1,58 @@
+.episodes-list,
+.characters-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.episode-item,
+.character-item {
+  background-color: white;
+  box-shadow: 2px 5px 11px 0px #838383;
+  margin: 20px;
+  width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.ep-number {
+  background-color: #438ca7d3;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 40px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.char-img img {
+  height: 210px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.ep-info,
+.char-info {
+  background-color: #5ebee129;
+  padding: 20px;
+  width: 450px;
+  border-radius: 20px;
+}
+
+.page-title {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.807);
+  box-shadow: 2px 5px 11px 0px #838383;
+}
+
+.page-title h1 {
+  color: #438ca7d3;
+  padding: 10px;
+}
+
+b {
+  color: #438ca7d3;
+}
