@@ -14,33 +14,12 @@ export const Signup = () => {
   const shortUserNameMessageRef = useRef();
 
   const addUser = () => {
-    let users = [];
-
-    try {
-      users = JSON.parse(localStorage.getItem("users"));
-      users.setItem("userEmail", "");
-      users.setItem("userPassword", "");
-    } catch (e) {
-      users = [];
-      console.log("error");
-    }
-
-    console.log(users);
-    const userFound = users.find(
-      ({ userEmail }) => userEmail === userEmailRef.current.value
-    );
-    if (userFound) {
-      console.log("user already exists");
-      existentEmailMessageRef.current.style.display = "block";
-    } else {
-      users.push({
-        userEmail: userEmailRef.current.value,
-        userPassword: userPasswordRef.current.value,
-      });
-      localStorage.setItem("users", JSON.stringify(users));
-
+    if (userEmailRef.current.value !== localStorage.getItem("userEmail")) {
+      localStorage.setItem("userEmail", userEmailRef.current.value);
+      localStorage.setItem("userPassword", userPasswordRef.current.value);
       existentEmailMessageRef.current.style.display = "none";
-      console.log(users);
+    } else {
+      existentEmailMessageRef.current.style.display = "block";
     }
   };
 
@@ -97,19 +76,21 @@ export const Signup = () => {
     }
   };
 
+  const checkPasswordsMatch = () => {
+    if (userPasswordRef.current.value !== userPasswordCheckRef.current.value) {
+      samePasswordMessageRef.current.style.display = "block";
+    } else {
+      samePasswordMessageRef.current.style.display = "none";
+      addUser();
+    }
+  };
+
   const onRegisterClick = () => {
     checkingInputs();
     checkEmail();
     checkUserNameLength();
     checkPasswordLength();
-
-    if (userPasswordRef.current.value !== userPasswordCheckRef.current.value) {
-      samePasswordMessageRef.current.style.display = "block";
-    } else {
-      samePasswordMessageRef.current.style.display = "none";
-
-      addUser();
-    }
+    checkPasswordsMatch();
   };
 
   return (

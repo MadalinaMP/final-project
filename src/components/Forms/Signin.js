@@ -5,7 +5,7 @@ import "./forms-style.css";
 export const Signin = () => {
   const userEmailRef = useRef();
   const userPasswordRef = useRef();
-  const userNotFoundMessageRef = useRef();
+  const errMessageRef = useRef();
   const navigateTo = useNavigate();
 
   const redirectLoggedInUser = () => {
@@ -13,28 +13,14 @@ export const Signin = () => {
   };
 
   const checkUser = () => {
-    let users;
-
-    try {
-      users = JSON.parse(localStorage.getItem("users"));
-      users.setItem("userEmail", "");
-      users.setItem("userPassword", "");
-    } catch (e) {
-      users = [];
-      console.log("error");
-    }
-
-    const userFound = users.find(
-      ({ userEmail, userPassword }) =>
-        userEmail === userEmailRef.current.value &&
-        userPassword === userPasswordRef.current.value
-    );
-    if (userFound) {
-      alert("okay");
-      redirectLoggedInUser();
-      userNotFoundMessageRef.current.style.display = "none";
+    if (
+      userEmailRef.current.value !== localStorage.getItem("userEmail") &&
+      userPasswordRef.current.value !== localStorage.getItem("userPassword")
+    ) {
+      errMessageRef.current.style.display = "block";
     } else {
-      userNotFoundMessageRef.current.style.display = "block";
+      errMessageRef.current.style.display = "none";
+      redirectLoggedInUser();
     }
   };
 
@@ -64,8 +50,8 @@ export const Signin = () => {
         <h2>Sign into your account</h2>
 
         <div>
-          <p ref={userNotFoundMessageRef} className="err-msg">
-            User not found.
+          <p ref={errMessageRef} className="err-msg">
+            Wrong password or email.
           </p>
           <input
             ref={userEmailRef}
