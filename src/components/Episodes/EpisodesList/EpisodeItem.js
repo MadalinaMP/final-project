@@ -1,15 +1,8 @@
 import React from "react";
-//import { useNavigate } from "react-router-dom";
 import "../../../assets/api-style.css";
 
 const EpisodeItem = (props) => {
   const { id, name, episode: episodeNr, air_date, url, created } = props;
-
-  //   const navigateTo = useNavigate();
-
-  //   const selectEpisode = () => {
-  //     navigateTo(`/episodes/${id}`);
-  //   };
 
   return (
     <div className="episode-item">
